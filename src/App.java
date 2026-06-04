@@ -77,7 +77,10 @@ public class App {
             Files.writeString(Path.of("./resumen_peliculas.txt"), "- " + numeroTotalPeliculas + "\n" + "- "
                     + duracionTotalPeliculas + "\n" + "- " + mediaDuracion + "\n" + "- " + peliculaMasLogeva);
 
-            
+            String mensajeLogs = ("Esto es un mensaje de ejecucion, se han ejecutado " + listaPeliculas.size() + " peliculas \n");
+
+            Files.writeString(Path.of("./logs.txt"), mensajeLogs, java.nio.file.StandardOpenOption.CREATE, java.nio.file.StandardOpenOption.APPEND);
+
 
         } catch (IOException e) {
             System.out.println("Error al leer el fichero: " + e.getMessage());
