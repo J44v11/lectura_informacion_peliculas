@@ -49,8 +49,6 @@ public class App {
 
             }
 
-            System.out.println("Numero total de peliculas: " + listaPeliculas.size() + " peliculas");
-
             int duracionTotal = 0;
 
             for (Pelicula pelicula : listaPeliculas) {
@@ -59,11 +57,6 @@ public class App {
                 duracionTotal = duracionTotal + duracion;
 
             }
-
-            System.out.println("Duracion total de las peliculas: " + duracionTotal + " minutos");
-
-            System.out
-                    .println("Duracion media de las peliculas: " + duracionTotal / listaPeliculas.size() + " minutos");
 
             int peliculaMasLarga = 0;
 
@@ -75,7 +68,16 @@ public class App {
 
             }
 
-            System.out.println("Pelicula mas larga: " + peliculaMasLarga + " minutos");
+            String numeroTotalPeliculas = ("Numero total de peliculas: " + listaPeliculas.size() + " peliculas");
+            String duracionTotalPeliculas = ("Duracion total de las peliculas: " + duracionTotal + " minutos");
+            String mediaDuracion = ("Duracion media de las peliculas: " + duracionTotal / listaPeliculas.size()
+                    + " minutos");
+            String peliculaMasLogeva = ("Pelicula mas larga: " + peliculaMasLarga + " minutos");
+
+            Files.writeString(Path.of("./resumen_peliculas.txt"), "- " + numeroTotalPeliculas + "\n" + "- "
+                    + duracionTotalPeliculas + "\n" + "- " + mediaDuracion + "\n" + "- " + peliculaMasLogeva);
+
+            
 
         } catch (IOException e) {
             System.out.println("Error al leer el fichero: " + e.getMessage());

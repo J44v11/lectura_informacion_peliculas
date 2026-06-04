@@ -1,0 +1,4 @@
+- Numero total de peliculas: 6 peliculas
+- Duracion total de las peliculas: 842 minutos
+- Duracion media de las peliculas: 140 minutos
+- Pelicula mas larga: 175 minutos
