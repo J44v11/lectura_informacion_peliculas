@@ -1,12 +1,15 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 
 import net.salesianos.pelicula.Pelicula;
 
 public class App {
     public static void main(String[] args) throws Exception {
+
+        List<Pelicula> listaPeliculas = new ArrayList<>();
 
         try {
             // Lee el fichero peliculas.csv linea a linea
@@ -32,8 +35,17 @@ public class App {
                 // Instanciamos el objeto Pelicula con esos datos que extraimos
                 Pelicula pelicula = new Pelicula(tituloPelicula, generoPelicula, duracionPelicula);
                 
-                // Lo imprimo por consola
+                // Lo imprimo por consola para ver que peliculas se han añadido en memoria
                 System.out.println("Pelicula creada en memoria: " + pelicula.getTitulo());
+
+                listaPeliculas.add(pelicula);
+            }
+
+            System.out.println("Peliculas añadidas al ArrayList: ");
+            for(Pelicula pelicula : listaPeliculas){
+
+                System.out.println(pelicula);
+
             }
 
             
