@@ -79,7 +79,7 @@ public class App {
 
             String mensajeLogs = ("Esto es un mensaje de ejecucion, se han ejecutado " + listaPeliculas.size() + " peliculas \n");
 
-            Files.writeString(Path.of("./logs.txt"), mensajeLogs, java.nio.file.StandardOpenOption.CREATE, java.nio.file.StandardOpenOption.APPEND);
+            Files.writeString(Path.of("./log_peliculas.txt"), mensajeLogs, java.nio.file.StandardOpenOption.CREATE, java.nio.file.StandardOpenOption.APPEND);
 
 
         } catch (IOException e) {
